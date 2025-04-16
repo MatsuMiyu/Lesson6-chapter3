@@ -69,7 +69,7 @@
     };
 
       // ボタンをクリックして結果を表示する
-      $('.js-fortune-start').on('click',function(){
+      $(document).on('click', '.js-fortune-start', function() {
         for (let list in fortuneResults) {
         let number = Math.floor(Math.random() * 3);
         $('div.' + list + ' .stars').text(fortuneResults[list][number].stars);
@@ -84,7 +84,7 @@
        });
 
       // 「もう一度占う！」のボタンをクリックすると、result>divを非表示にする
-      $('.js-fortune-restart').click(function(){  // 結果を非表示にする
+      $(document).on('click', '.js-fortune-restart', function() {  // 結果を非表示にする
         $('.result').fadeOut();
         // classとボタンの内容を変更する
         $(this).toggleClass('js-fortune-restart');    // 新しいクラスの削除
