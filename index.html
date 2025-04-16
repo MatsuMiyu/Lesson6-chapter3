@@ -71,21 +71,21 @@
       // ボタンをクリックして結果を表示する
       $(document).on('click', '.js-fortune-start', function() {
         for (let list in fortuneResults) {
-        let number = Math.floor(Math.random() * 3);
-        $('div.' + list + ' .stars').text(fortuneResults[list][number].stars);
-        $('div.' + list + ' .detail').text(fortuneResults[list][number].detail);
-      }
+          let number = Math.floor(Math.random() * 3);
+          $('div.' + list + ' .stars').text(fortuneResults[list][number].stars);
+          $('div.' + list + ' .detail').text(fortuneResults[list][number].detail);
+        }
 
        // classを追加して、ボタンの内容を変更する
         $(this).toggleClass('js-fortune-restart');    // 新しいクラスを追加
-        $(this).text('もう一度占う！');  //  ボタンのtextを変更
-        $(this).toggleClass('js-fortune-start');    // 既存のクラスは削除 　　// 結果を表示する
-        $('.result').fadeIn();
-       });
+        $(this).text('もう一度占う！');  // ボタンのtextを変更
+        $(this).toggleClass('js-fortune-start');    // 既存のクラスは削除 　
+        $('.result').fadeIn(); // 結果を表示する
+      });
 
       // 「もう一度占う！」のボタンをクリックすると、result>divを非表示にする
-      $(document).on('click', '.js-fortune-restart', function() {  // 結果を非表示にする
-        $('.result').fadeOut();
+      $(document).on('click', '.js-fortune-restart', function() {
+        $('.result').fadeOut(); // 結果を非表示にする
         // classとボタンの内容を変更する
         $(this).toggleClass('js-fortune-restart');    // 新しいクラスの削除
         $(this).toggleClass('js-fortune-start');    // 既存クラスの追加（復活）
